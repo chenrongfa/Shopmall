@@ -1,13 +1,15 @@
 package test.yy.chen.shopmall.home.fragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -36,6 +38,8 @@ public class HomeFragment extends BaseFragment {
     private static final String TAG = "HomeFragment";
     @BindView(R.id.tv_main_search)
     TextView tvMainSearch;
+    @BindView(R.id.iv_main_back)
+    ImageView ivMainBack;
     @BindView(R.id.tv_main_message)
     TextView tvMainMessage;
     @BindView(R.id.rv_main)
@@ -79,10 +83,24 @@ public class HomeFragment extends BaseFragment {
         resultBean=data.getResult();
         if(resultBean!= null){
             rvMain.setAdapter(new HomeAdapter(context,resultBean));
-            rvMain.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager
-                    .VERTICAL,false));
+            GridLayoutManager manager=new GridLayoutManager(context,1);
+                manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                    @Override
+                    public int getSpanSize(int position) {
+                        if(position<3){
+                            ivMainBack.setVisibility(View.GONE);
+                        }else{
+                            ivMainBack.setVisibility(View.VISIBLE);
+                        }
+                        
+                        return 1;
+                    }
+                });
+            
+                  rvMain.setLayoutManager(manager);
 
-
+        }else{
+            Toast.makeText(context, "解析错误", Toast.LENGTH_SHORT).show();
         }
 
 
@@ -95,15 +113,27 @@ public class HomeFragment extends BaseFragment {
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, rootView);
         return rootView;
+
+        // STOPSHIP: 2017/1/22  dd
     }
 
-    @OnClick({R.id.tv_main_search, R.id.tv_main_message})
+    @OnClick({R.id.tv_main_search, R.id.tv_main_message,R.id.iv_main_back})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_main_search:
+                showTip("search");
                 break;
             case R.id.tv_main_message:
+                showTip("message");
+                break;
+            case R.id.iv_main_back:
+                rvMain.scrollToPosition(0);
                 break;
         }
+    }
+   void showTip(String message){
+       if (message!=null)
+       Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+
     }
 }

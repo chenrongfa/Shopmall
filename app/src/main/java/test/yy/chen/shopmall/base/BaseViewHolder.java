@@ -1,7 +1,10 @@
 package test.yy.chen.shopmall.base;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import test.yy.chen.shopmall.home.bean.HomeData;
 
 /**
  * shopmall2
@@ -15,5 +18,5 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
     public BaseViewHolder(View itemView) {
         super(itemView);
     }
-    public void bindData(){}
+    public void bindData(HomeData.ResultBean resultBean, Context co){}
 }

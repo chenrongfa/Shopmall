@@ -4,12 +4,11 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Window;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,17 +23,18 @@ import test.yy.chen.shopmall.personal.fragment.PersonalFragment;
 import test.yy.chen.shopmall.shopcar.fragment.ShopcarFragment;
 import test.yy.chen.shopmall.type.fragment.TypeFragment;
 
+import static test.yy.chen.shopmall.R.id.rb_shopcar;
+
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.iv_main_back)
-    ImageView ivMainBack;
+
     @BindView(R.id.rb_home)
     RadioButton rbHome;
     @BindView(R.id.rb_type)
     RadioButton rbType;
     @BindView(R.id.rb_community)
     RadioButton rbCommunity;
-    @BindView(R.id.rb_shopcar)
+    @BindView(rb_shopcar)
     RadioButton rbShopcar;
     @BindView(R.id.rb_personal)
     RadioButton rbPersonal;
@@ -51,10 +51,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        rgMain= (RadioGroup) findViewById(R.id.rg_main);
+        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();    
         ButterKnife.bind(this);
+
+
 
         initData();
 
@@ -82,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.rb_community:
                         currposition=2;
                         break;
-                    case R.id.rb_shopcar:
+                    case rb_shopcar:
                         currposition=3;
                         break;
                     case R.id.rb_personal:

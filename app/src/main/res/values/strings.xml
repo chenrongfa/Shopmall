@@ -7,4 +7,17 @@
     <string name="find">发现</string>
     <string name="shopcar">购物车</string>
     <string name="personal">个人中心</string>
+    <string name="seck_distance">今日距离*还有</string>
+    <string name="find_more">查看更多</string>
+    <string name="new_day_groom">今日新品推荐</string>
+    <string name="goods_message">商品详细信息</string>
+    <string name="it_more">更多</string>
+    <string name="it_share">分享</string>
+    <string name="it_search">搜索</string>
+    <string name="goods_atguigu">由尚硅谷发货</string>
+    <string name="goods_offer">选择付款方式</string>
+    <string name="remain">请注意付款安全</string>
+    <string name="relaction_user">联系客服</string>
+    <string name="collectioned">收藏</string>
+    <string name="addcar">加入购物车</string>
 </resources>

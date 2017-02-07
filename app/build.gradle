@@ -2,8 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 23
+    buildToolsVersion '23.0.2'
     defaultConfig {
         applicationId "test.yy.chen.shopmall"
         minSdkVersion 14
@@ -35,4 +35,5 @@ dependencies {
     compile files('libs/okio-1.9.0.jar')
     compile 'com.youth.banner:banner:1.4.8'
     compile files('libs/fastjson-1.2.23.jar')
+    compile files('libs/glide-3.6.1.jar')
 }
