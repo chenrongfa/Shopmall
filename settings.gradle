@@ -1,1 +1,2 @@
-include ':app', ':container'
+include ':app', ':container', ':flycotab', ':FlycoTabLayout_Lib'
+include ':payDemoActivity_20'

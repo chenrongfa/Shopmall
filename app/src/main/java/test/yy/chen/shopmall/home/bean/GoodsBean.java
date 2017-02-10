@@ -25,6 +25,26 @@ public class GoodsBean  implements Serializable{
     private String name;
     private String product_id;
 
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+    }
+
+    private boolean isChecked= true;
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    private int count=1;
+
     public String getCover_price() {
         return cover_price;
     }
@@ -55,5 +75,17 @@ public class GoodsBean  implements Serializable{
 
     public void setProduct_id(String product_id) {
         this.product_id = product_id;
+    }
+
+    @Override
+    public String toString() {
+        return "GoodsBean{" +
+                "cover_price='" + cover_price + '\'' +
+                ", figure='" + figure + '\'' +
+                ", name='" + name + '\'' +
+                ", product_id='" + product_id + '\'' +
+                ", isChecked=" + isChecked +
+                ", count=" + count +
+                '}';
     }
 }

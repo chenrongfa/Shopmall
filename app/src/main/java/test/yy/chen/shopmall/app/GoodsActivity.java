@@ -1,8 +1,10 @@
 package test.yy.chen.shopmall.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +20,7 @@ import com.bumptech.glide.Glide;
 
 import test.yy.chen.shopmall.R;
 import test.yy.chen.shopmall.home.bean.GoodsBean;
+import test.yy.chen.shopmall.utils.CacheUtil;
 import test.yy.chen.shopmall.utils.Constants;
 
 public class GoodsActivity extends AppCompatActivity implements View.OnClickListener {
@@ -35,6 +38,8 @@ public class GoodsActivity extends AppCompatActivity implements View.OnClickList
     private TextView tvCl;
     private TextView ivSc;
     private Button btnAdd;
+    private GoodsBean goods;
+    private static final String TAG = "GoodsActivity";
 
 
     /**
@@ -72,7 +77,13 @@ public class GoodsActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if ( v == btnAdd ) {
-            Constants.showTip(this,"add");
+            boolean add = CacheUtil.add(goods,this);
+            if (add){
+                Constants.showTip(this,"添加成功");
+            }else{
+                Log.e(TAG, "onClick: "+CacheUtil.cache.toString() );
+                Constants.showTip(this,"已经添加或者添加失败");
+            }
         }else if(v==tvRl){
             Constants.showTip(this,"tvRl");
 
@@ -81,6 +92,8 @@ public class GoodsActivity extends AppCompatActivity implements View.OnClickList
 
         }else if(v==ivSc){
             Constants.showTip(this,"ivSc");
+            Intent intent=new Intent(this,ShopActivity.class);
+            startActivity(intent);
 
         }
     }
@@ -93,7 +106,8 @@ public class GoodsActivity extends AppCompatActivity implements View.OnClickList
         findViews();
         initView();
         //得到数据
-        GoodsBean goods = (GoodsBean) getIntent().getSerializableExtra("goods");
+
+        goods = (GoodsBean) getIntent().getSerializableExtra("goods");
         if(goods!=null){
             initData(goods);
         }
@@ -170,7 +184,7 @@ public class GoodsActivity extends AppCompatActivity implements View.OnClickList
         tb_action = (Toolbar) findViewById(R.id.tb_action);
         tv_goodsTip= (TextView) findViewById(R.id.tv_goosTip);
     }
-
+// 及解决
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

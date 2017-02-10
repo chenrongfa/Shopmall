@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/FlycoTabLayout_Lib/FlycoTabLayout_Lib.iml" filepath="$PROJECT_DIR$/FlycoTabLayout_Lib/FlycoTabLayout_Lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/Shopmall.iml" filepath="$PROJECT_DIR$/Shopmall.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/container/container.iml" filepath="$PROJECT_DIR$/container/container.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flycotab/flycotab.iml" filepath="$PROJECT_DIR$/flycotab/flycotab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/payDemoActivity_20/payDemoActivity_20.iml" filepath="$PROJECT_DIR$/payDemoActivity_20/payDemoActivity_20.iml" />
       <module fileurl="file://$PROJECT_DIR$/shopmall2.iml" filepath="$PROJECT_DIR$/shopmall2.iml" />
     </modules>
   </component>

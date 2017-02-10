@@ -20,4 +20,12 @@
     <string name="relaction_user">联系客服</string>
     <string name="collectioned">收藏</string>
     <string name="addcar">加入购物车</string>
+    <string name="empty">这里什么商品都没有</string>
+    <string name="btn_empty">去逛逛</string>
+    <string name="check_all">全选</string>
+    <string name="count"/>
+    <string name="account">结算</string>
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
+    <string name="complish">完成</string>
 </resources>

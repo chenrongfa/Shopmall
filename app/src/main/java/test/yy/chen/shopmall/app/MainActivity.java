@@ -8,7 +8,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,11 +54,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         rgMain= (RadioGroup) findViewById(R.id.rg_main);
-        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();    
         ButterKnife.bind(this);
-
-
-
         initData();
 
     }

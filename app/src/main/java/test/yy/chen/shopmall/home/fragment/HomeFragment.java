@@ -55,13 +55,11 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void bindData() {
-
             OkHttpUtils.get()
                     .tag(context)
                     .url(Constants.HOME_URL)
                     .build()
                     .execute(new StringData());
-
     }
     class StringData extends StringCallback{
 

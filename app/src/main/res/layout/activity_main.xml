@@ -6,27 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="test.yy.chen.shopmall.app.MainActivity">
-    <RelativeLayout
+    tools:context="test.yy.chen.shopmall.app.MainActivity"
+    >
+
+    <FrameLayout
+        android:id="@+id/fl_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        >
+        />
 
-        <FrameLayout
-            android:id="@+id/fl_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </FrameLayout>
-
-
-    </RelativeLayout>
-
+    <!--</RelativeLayout>-->
 
     <RadioGroup
         android:id="@+id/rg_main"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/home_bottom_parent_bg"
         android:orientation="horizontal">
 
@@ -66,7 +62,6 @@
             />
 
     </RadioGroup>
-
 
 
 </LinearLayout>
