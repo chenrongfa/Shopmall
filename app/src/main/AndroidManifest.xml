@@ -34,7 +34,7 @@
                   android:theme="@style/main_theme"
             >
         </activity>
-
+<activity android:name=".app.LoginActivity"  android:theme="@style/main_theme"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView
+        android:layout_marginLeft="8dp"
+        android:text="@string/ordernary_goods"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <GridView
+        android:id="@+id/gv_odernary"
+        android:gravity="center"
+        android:background="@color/main_gray"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:horizontalSpacing="8dp"
+        android:verticalSpacing="8dp"
+        android:layout_gravity="center"
+        android:numColumns="3"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"></GridView>
+</LinearLayout>

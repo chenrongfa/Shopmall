@@ -1,11 +1,22 @@
 package test.yy.chen.shopmall.community.fragment;
 
-import android.util.Log;
-import android.view.Gravity;
+import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
+import com.flyco.tablayout.SegmentTabLayout;
+import com.flyco.tablayout.listener.OnTabSelectListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import test.yy.chen.shopmall.R;
 import test.yy.chen.shopmall.base.BaseFragment;
+import test.yy.chen.shopmall.community.adapter.CommunityViewPager;
 
 /**
  * shopmall2
@@ -15,21 +26,84 @@ import test.yy.chen.shopmall.base.BaseFragment;
  * company:yy
  */
 
-public class CommunityFragment extends BaseFragment {
-    TextView textView;
-    private static final String TAG = "HomeFragment";
-    @Override
-    public View initView() {
-        textView=new TextView(context);
-        textView.setGravity(Gravity.CENTER);
+public class CommunityFragment extends BaseFragment implements View.OnClickListener {
 
-        return textView;
-    }
+      private static final String TAG = "HomeFragment";
+      @BindView(R.id.ib_backToIndex)
+      ImageButton ibBackToIndex;
+      @BindView(R.id.ib_message)
+      ImageButton ibMessage;
+      @BindView(R.id.tl_3)
+      SegmentTabLayout tl3;
+      @BindView(R.id.vp_community)
+      ViewPager vpCommunity;
+     private String titles[];
+      private List<BaseFragment> fragments;
 
-    @Override
-    public void bindData() {
+      @Override
+      public View initView() {
+            View inflate = inflater.inflate(R.layout.community_fragment, null);
+            ButterKnife.bind(this, inflate);
+
+            return inflate;
+      }
+
+      @Override
+      public void bindData() {
 //        super.bindData();
-        Log.e(TAG, "bindData: 2" );
-        textView.setText("发现");
-    }
+            initData();
+
+      }
+
+      private void initData() {
+            titles=new String[]{"新帖","热帖"};
+            fragments=new ArrayList<>();
+            fragments.add(new NewDiscuss());
+            fragments.add(new HotDiscuss());
+            setTl();
+
+      }
+      private void setTl() {
+            tl3.setTabData(titles);
+            tl3.setOnTabSelectListener(new OnTabSelectListener() {
+                  @Override
+                  public void onTabSelect(int position) {
+                        Toast.makeText(context, ""+position, Toast.LENGTH_SHORT).show();
+                        vpCommunity.setCurrentItem(position);
+                  }
+                  @Override
+                  public void onTabReselect(int position) {
+
+                  }
+            });
+            vpCommunity.setAdapter(new CommunityViewPager(getActivity().getSupportFragmentManager()
+            ,titles,fragments));
+            vpCommunity.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                  @Override
+                  public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+                  }
+
+                  @Override
+                  public void onPageSelected(int position) {
+                        tl3.setCurrentTab(position);
+
+                  }
+
+                  @Override
+                  public void onPageScrollStateChanged(int state) {
+
+                  }
+            });
+
+      }
+
+
+      @OnClick({R.id.ib_message})
+      public void onClick(View view) {
+            Toast.makeText(context, "11", Toast.LENGTH_SHORT).show();
+
+      }
+
+
 }

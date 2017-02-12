@@ -1,2 +1,2 @@
-include ':app', ':container', ':flycotab', ':FlycoTabLayout_Lib'
+include ':app', ':container', ':flycotab', ':FlycoTabLayout_Lib', ':sample', ':opendanmaku'
 include ':payDemoActivity_20'

@@ -14,7 +14,7 @@ import com.zhy.http.okhttp.callback.StringCallback;
 import okhttp3.Call;
 import test.yy.chen.shopmall.R;
 import test.yy.chen.shopmall.base.BaseFragment;
-import test.yy.chen.shopmall.home.adapter.TagAdapter;
+import test.yy.chen.shopmall.type.adapter.TagAdapter;
 import test.yy.chen.shopmall.type.bean.TagBean;
 import test.yy.chen.shopmall.utils.Constants;
 

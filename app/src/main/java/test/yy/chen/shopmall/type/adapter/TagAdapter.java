@@ -1,4 +1,4 @@
-package test.yy.chen.shopmall.home.adapter;
+package test.yy.chen.shopmall.type.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -57,8 +57,7 @@ public class TagAdapter extends BaseAdapter {
       public View getView(int i, View view, ViewGroup viewGroup) {
            ViewHolder  viewHolder;
             if(view==null){
-                     view=View.inflate(context ,R.layout.tag_item,null);
-
+                  view=View.inflate(context,R.layout.tag_item,null);
                  viewHolder=new ViewHolder();
                   viewHolder.tv_tag= (TextView) view.findViewById(R.id.tv_tag);
                   viewHolder.tv_tag.setTextColor(color[i]);

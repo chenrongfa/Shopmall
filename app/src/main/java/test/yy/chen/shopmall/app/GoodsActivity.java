@@ -61,7 +61,11 @@ public class GoodsActivity extends AppCompatActivity implements View.OnClickList
         tvCl = (TextView)findViewById( R.id.tv_cl );
         ivSc = (TextView)findViewById( R.id.iv_sc );
         btnAdd = (Button)findViewById( R.id.btn_add );
-
+//        try {
+//            ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("dd"));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         btnAdd.setOnClickListener( this );
         tvRl.setOnClickListener(this);
         tvCl.setOnClickListener(this);

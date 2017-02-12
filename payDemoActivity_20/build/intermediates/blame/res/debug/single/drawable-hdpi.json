@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\shopmall2\\payDemoActivity_20\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\msp_demo_title.png",
+        "source": "D:\\shopmall2\\payDemoActivity_20\\src\\main\\res\\drawable-hdpi\\msp_demo_title.png"
+    },
+    {
+        "merged": "D:\\shopmall2\\payDemoActivity_20\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\msp_demo_title_bg.png",
+        "source": "D:\\shopmall2\\payDemoActivity_20\\src\\main\\res\\drawable-hdpi\\msp_demo_title_bg.png"
+    },
+    {
+        "merged": "D:\\shopmall2\\payDemoActivity_20\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\msp_icon.png",
+        "source": "D:\\shopmall2\\payDemoActivity_20\\src\\main\\res\\drawable-hdpi\\msp_icon.png"
+    }
+]
