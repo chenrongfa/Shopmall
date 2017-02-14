@@ -15,6 +15,8 @@
             <option value="$PROJECT_DIR$/opendanmaku" />
             <option value="$PROJECT_DIR$/payDemoActivity_20" />
             <option value="$PROJECT_DIR$/sample" />
+            <option value="$PROJECT_DIR$/shareDemo" />
+            <option value="$PROJECT_DIR$/shareTest" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

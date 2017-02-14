@@ -1,5 +1,6 @@
 package test.yy.chen.shopmall.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,14 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMAuthListener;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,6 +60,25 @@ public class LoginActivity extends AppCompatActivity {
       @BindView(R.id.tv_other_login)
       TextView tvOtherLogin;
       private boolean isShow=false;//默认不显示
+      UMShareListener umShareListener=new UMShareListener() {
+            @Override
+            public void onResult(SHARE_MEDIA share_media) {
+                  Toast.makeText(
+                          LoginActivity.this, "success", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(SHARE_MEDIA share_media, Throwable throwable) {
+                  Toast.makeText(LoginActivity.this, "onError", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onCancel(SHARE_MEDIA share_media) {
+                  Toast.makeText(LoginActivity.this, "onCancel", Toast.LENGTH_SHORT).show();
+
+            }
+      };
 
       @Override
       protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -100,7 +128,43 @@ public class LoginActivity extends AppCompatActivity {
                   case R.id.tv_password:
                         break;
                   case R.id.tv_other_login:
-                        break;
+                        UMShareAPI umShareAPI = UMShareAPI.get(this);
+
+
+                        UMAuthListener umAuthListener=new UMAuthListener() {
+                              @Override
+                              public void onComplete(SHARE_MEDIA share_media, int i, Map<String, String> map) {
+                                    Toast.makeText(LoginActivity.this, "onComplete", Toast.LENGTH_SHORT).show();
+                              }
+
+                              @Override
+                              public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) {
+                                    Toast.makeText(LoginActivity.this, "onError", Toast.LENGTH_SHORT).show();
+
+                              }
+
+                              @Override
+                              public void onCancel(SHARE_MEDIA share_media, int i) {
+                                    Toast.makeText(LoginActivity.this, "onCancel", Toast.LENGTH_SHORT).show();
+
+                              }
+                        };
+                        UMShareAPI.get(this).getPlatformInfo(this, SHARE_MEDIA.ALIPAY, umAuthListener);
+                       new ShareAction(this)
+                                .withText("hello")
+                                .setDisplayList(SHARE_MEDIA.ALIPAY)
+                               .setCallback(umShareListener)
+                               .open();
+
+
             }
       }
+
+      @Override
+      protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+            super.onActivityResult(requestCode, resultCode, data);
+            UMShareAPI.get(this).onActivityResult(requestCode,resultCode,data);
+
+      }
+
 }

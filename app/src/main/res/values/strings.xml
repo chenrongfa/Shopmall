@@ -54,4 +54,5 @@
     <string name="protocol"><![CDATA[点击查看<<陈蓉发>>协议]]></string>
     <string name="remember">忘记密码</string>
     <string name="register">注册</string>
+    <string name="other">分享</string>
 </resources>

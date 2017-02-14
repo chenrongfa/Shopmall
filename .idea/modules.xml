@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/opendanmaku/opendanmaku.iml" filepath="$PROJECT_DIR$/opendanmaku/opendanmaku.iml" />
       <module fileurl="file://$PROJECT_DIR$/payDemoActivity_20/payDemoActivity_20.iml" filepath="$PROJECT_DIR$/payDemoActivity_20/payDemoActivity_20.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shareDemo/shareDemo.iml" filepath="$PROJECT_DIR$/shareDemo/shareDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shareTest/shareTest.iml" filepath="$PROJECT_DIR$/shareTest/shareTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/shopmall2.iml" filepath="$PROJECT_DIR$/shopmall2.iml" />
     </modules>
   </component>

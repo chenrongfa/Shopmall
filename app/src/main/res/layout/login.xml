@@ -135,6 +135,7 @@
             android:button="@null"
             />
         <TextView
+            android:clickable="true"
             android:id="@+id/tv_protocol"
             android:text="@string/protocol"
             android:textColor="@color/main_red"
@@ -164,7 +165,7 @@
     android:id="@+id/tv_other_login"
     android:gravity="center"
     android:clickable="true"
-    android:text="@string/remember"
+    android:text="@string/other"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"></TextView>
 
